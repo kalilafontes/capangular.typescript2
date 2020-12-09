@@ -56,7 +56,12 @@ export class AppComponent implements OnInit{
     }
    
     this.pedido.valor = Number.parseFloat(this.pedido.valor.toFixed(2));
-    this.pedidoConcluido = true;
+
+    
+    if(this.pedido.valor > 0){
+      this.pedidoConcluido = true;
+    }
+    
   }
 
   ngOnInit(): void {   

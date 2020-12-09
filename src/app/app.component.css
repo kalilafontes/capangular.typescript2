@@ -3,6 +3,11 @@ h1{
     text-align: center;
     text-transform: uppercase;
 }
+.grid-pedido{
+    width: 800px; 
+    margin: 0 auto;
+
+}
 .table-top{
     background-color: #26a69a;
     font-weight: 600;

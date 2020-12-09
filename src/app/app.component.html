@@ -1,4 +1,4 @@
-<form  [hidden]="pedidoConcluido" #pedidoForm="ngForm" style="width: 800px; margin: 0 auto;">   
+<form  [hidden]="pedidoConcluido" #pedidoForm="ngForm" class="grid-pedido">   
     <div>
         <h1>Lista de Produtos</h1>
         <table border="1">
@@ -23,6 +23,9 @@
     </div>
 
     <div class="form-group">
+        <div style="width: 400px;">
+            <p>Insira aqui seus dados:</p>
+        </div>
         <div class="input-field" col m6>
             <label for="text">Nome do Cliente:</label>
             <input [(ngModel)]="model.nome" name="nome" type="text" >
@@ -42,11 +45,11 @@
     </div>
      
 </form>
-<div [hidden]="!pedidoConcluido">
+<div [hidden]="!pedidoConcluido" class="grid-pedido">
     
 
     <div>
-        <h1>Carrinho de Compras</h1>
+        <h1>Pedido Concluído</h1>
         <table border="1">
             <tr class="table-top">
                 <td>Descrição</td>
@@ -64,7 +67,14 @@
             
         </table>    
         <label for="pedido">Valor Total do Pedido</label>
-        <input [(ngModel)]="pedido.valor" name="pedido" type="text">
+
+        <p [(ngModel)]="pedido.valor" name="pedido" type="text" >{{pedido.valor | currency:'BRL':true:'1.2-2'}} </p>
+
+        <label for="pedido">Dados do Cliente</label>
+        <p>Nome: {{model.nome}} </p>
+        <p>Endereço: {{model.endereco}} </p>
+       <!--  <input [(ngModel)]="pedido.valor" name="pedido" type="text"> -->
+        <p>Obrigada por realizar o pedido!</p>
     </div>
 
     
