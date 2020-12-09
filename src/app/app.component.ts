@@ -13,24 +13,7 @@ export class AppComponent implements OnInit{
 
   pedido:pedido = {numero:1, valor:0, entrega: false, itens: new Array<item>() };  
   pedidoConcluido = false;  
-  model:cliente = {nome: " ", endereco: "", entrega: false};
-   
-   /* getTotal(): number {
-    let total = 0;
-    let valorImposto = 0;
-    let valorEntrega = 0;
-
-    total = this.somaProdutos();
-
-    valorImposto = total * this.getImposto();
-
-    if (this.entrega) {
-        valorEntrega = total * this.getTaxaEntrega();
-    }
-
-    //O valor do imposto deve incidir sobre a taxa de entrega?
-    return total + valorImposto + valorEntrega;
-  } */
+  model:cliente = {nome: " ", endereco: "", entrega: false};   
 
 
   somaProdutos(itens: Array<item>): number {
@@ -183,14 +166,6 @@ export class AppComponent implements OnInit{
   
 }
 
-/* export class Cliente {
-  constructor(    
-    public nome: string,
-    public endereco: string,
-  ) {   
-  }
-}
- */
 export interface item {
   descricao: string,
   categoria: string,
